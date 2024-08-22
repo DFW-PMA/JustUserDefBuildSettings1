@@ -17,7 +17,7 @@ public class JmXcodeBuildSettings
     {
 
         static let sClsId        = "JmXcodeBuildSettings"
-        static let sClsVers      = "v1.0105"
+        static let sClsVers      = "v1.0106"
         static let sClsDisp      = sClsId+".("+sClsVers+"): "
         static let sClsCopyRight = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved."
         static let bClsTrace     = false
@@ -30,22 +30,34 @@ public class JmXcodeBuildSettings
     static var jmAppVersionAndBuildNumber:String
     {
 
-        getAppVersionAndBuildNumber()
+    //  getAppVersionAndBuildNumber()
+
+    //  'CFBundleShortVersionString' is the Version # and
+    //  'CFBundleVersion'            is the Build   #:
+
+        return "Version v\(getAppInfoPlistString(for: "CFBundleShortVersionString")) (\(getAppInfoPlistString(for: "CFBundleVersion")))"
 
     }
 
     static var jmAppCopyright:String
     {
 
-    //  getAppCopyright()
-        getAppInfoPlistString(for: "NSHumanReadableCopyright")
+    //  return getAppCopyright()
+        return getAppInfoPlistString(for: "NSHumanReadableCopyright")
 
     }
 
     static var jmAppJmaUserSetting1:String
     {
 
-        getAppInfoPlistString(for: "JMA_USER_SETTING_1")
+        return getAppInfoPlistString(for: "JMA_USER_SETTING_1")
+
+    }
+
+    static var jmAppJmaUserSetting2:String
+    {
+
+        return getAppInfoPlistString(for: "JMA_USER_SETTING_2")
 
     }
 
@@ -67,6 +79,7 @@ public class JmXcodeBuildSettings
         asToString.append("'jmAppVersionAndBuildNumber': [\(self.jmAppVersionAndBuildNumber)],")
         asToString.append("'jmAppCopyright': [\(self.jmAppCopyright)],")
         asToString.append("'jmAppJmaUserSetting1': [\(self.jmAppJmaUserSetting1)],")
+        asToString.append("'jmAppJmaUserSetting2': [\(self.jmAppJmaUserSetting2)],")
         asToString.append("],")
         asToString.append("]")
 

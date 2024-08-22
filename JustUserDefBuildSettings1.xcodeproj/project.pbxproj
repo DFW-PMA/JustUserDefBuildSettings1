@@ -279,16 +279,17 @@
 				CODE_SIGN_ENTITLEMENTS = JustUserDefBuildSettings1/JustUserDefBuildSettings1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 01.01.24C234;
+				CURRENT_PROJECT_VERSION = 02.01.24C235;
 				DEVELOPMENT_ASSET_PATHS = "\"JustUserDefBuildSettings1/Preview Content\"";
 				DEVELOPMENT_TEAM = J434W9VGHF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustUserDefBuildSettings1/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(INFOPLIST_KEY_CFBundleDisplayName)";
+				INFOPLIST_KEY_CFBundleDisplayName = JustUserDefBuildSettings1;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved.";
-				JMA_USER_SETTING_1 = TRUE;
+				JMA_USER_SETTING_1 = "TRUE (Yes it is)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -310,16 +311,17 @@
 				CODE_SIGN_ENTITLEMENTS = JustUserDefBuildSettings1/JustUserDefBuildSettings1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 01.01.24C234;
+				CURRENT_PROJECT_VERSION = 02.01.24C235;
 				DEVELOPMENT_ASSET_PATHS = "\"JustUserDefBuildSettings1/Preview Content\"";
 				DEVELOPMENT_TEAM = J434W9VGHF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustUserDefBuildSettings1/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(INFOPLIST_KEY_CFBundleDisplayName)";
+				INFOPLIST_KEY_CFBundleDisplayName = JustUserDefBuildSettings1;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved.";
-				JMA_USER_SETTING_1 = TRUE;
+				JMA_USER_SETTING_1 = "TRUE (Yes it is)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

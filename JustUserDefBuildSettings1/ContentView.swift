@@ -16,7 +16,7 @@ struct ContentView: View
     {
         
         static let sClsId        = "ContentView"
-        static let sClsVers      = "v1.0101"
+        static let sClsVers      = "v1.0201"
         static let sClsDisp      = sClsId+"(.swift).("+sClsVers+"):"
         static let sClsCopyRight = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved."
         static let bClsTrace     = true
@@ -104,7 +104,7 @@ struct ContentView: View
 
                 Text("")
 
-                Text("Info.plist KEY 'JMA_USER_SETTING_1' is [\(AppGlobalConfiguration.jmaUserSetting1)]...")
+                Text("Info.plist KEY of 'JMA_USER_SETTING_1' is [\(AppGlobalConfiguration.jmaUserSetting1)]...")
                 .padding()
 
                 Spacer()
@@ -117,7 +117,26 @@ struct ContentView: View
                     VStack(alignment:.center)
                     {
 
-                        Text("\(AppGlobalInfo.sGlobalInfoAppCopyRight)")
+                        Text("\(getAppVersionAndBuildNumber())")    // <=== Version...
+                            .controlSize(.regular)
+
+                    }
+
+                    Spacer()
+
+                }
+
+                Spacer()
+
+                HStack(alignment:.center)
+                {
+
+                    Spacer()
+
+                    VStack(alignment:.center)
+                    {
+
+                        Text("\(getAppCopyright())")
                             .italic()
                             .controlSize(.mini)
 
@@ -176,6 +195,44 @@ struct ContentView: View
 
     }   // End of func presentSettingsSingleView().
     
+    func getAppVersionAndBuildNumber() -> String 
+    {
+
+        let sCurrMethod:String = #function
+        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
+        
+        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
+
+        let sAppVersionNumber:String         = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-N/A-"
+        let sAppBuildNumber:String           = (Bundle.main.infoDictionary?["CFBundleVersion"]            as? String) ?? "-N/A-"
+        let sAppVersionAndBuildNumber:String = "Version v\(sAppVersionNumber) (\(sAppBuildNumber))"
+
+        // Exit:
+
+        self.xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppVersionAndBuildNumber' is [\(sAppVersionAndBuildNumber)]...")
+
+        return sAppVersionAndBuildNumber
+
+    }   // End of func getAppVersionAndBuildNumber().
+
+    func getAppCopyright() -> String 
+    {
+
+        let sCurrMethod:String = #function
+        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
+        
+        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
+
+        let sAppCopyRight:String = (Bundle.main.infoDictionary?["NSHumanReadableCopyright"] as? String) ?? "-N/A-"
+
+        // Exit:
+
+        self.xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppCopyRight' is [\(sAppCopyRight)]...")
+
+        return sAppCopyRight
+
+    }   // End of func getAppCopyright().
+
     func xcgLogMsg(_ sMessage:String)
     {
 

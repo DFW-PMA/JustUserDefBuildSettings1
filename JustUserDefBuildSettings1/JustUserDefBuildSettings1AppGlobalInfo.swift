@@ -13,7 +13,7 @@ struct AppGlobalInfo
 {
     
     static let sGlobalInfoAppId        = "JustUserDefBuildSettings1"
-    static let sGlobalInfoAppVers      = "v1.0102"
+    static let sGlobalInfoAppVers      = "v1.0201"
     static let sGlobalInfoAppDisp      = sGlobalInfoAppId+".("+sGlobalInfoAppVers+"): "
     static let sGlobalInfoAppCopyRight = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved."
     
@@ -22,7 +22,7 @@ struct AppGlobalInfo
 enum AppGlobalConfiguration 
 {
 
-    // MARK: - Public API...
+    // MARK: - Public Variable(s)...
 
     static var jmaUserSetting1:String
     {
@@ -31,7 +31,7 @@ enum AppGlobalConfiguration
 
     }
 
-    // MARK: - Helper Methods...
+    // MARK: - Internal Method(s)...
 
     static private func infoPlistString(for key:String) -> String 
     {

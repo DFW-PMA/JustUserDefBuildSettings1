@@ -16,7 +16,7 @@ struct ContentView: View
     {
         
         static let sClsId        = "ContentView"
-        static let sClsVers      = "v1.0201"
+        static let sClsVers      = "v1.0205"
         static let sClsDisp      = sClsId+"(.swift).("+sClsVers+"):"
         static let sClsCopyRight = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved."
         static let bClsTrace     = true
@@ -78,7 +78,7 @@ struct ContentView: View
                         .scaledToFit()
                         .containerRelativeFrame(.horizontal)
                             { size, axis in
-                                size * 0.10
+                                size * 0.05
                             }
 
                 }
@@ -89,7 +89,7 @@ struct ContentView: View
                     Image(systemName: "globe.desk.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width:50, height: 50, alignment:.center)
+                        .frame(width:25, height: 25, alignment:.center)
 
                 }
 
@@ -104,7 +104,9 @@ struct ContentView: View
 
                 Text("")
 
-                Text("Info.plist KEY of 'JMA_USER_SETTING_1' is [\(AppGlobalConfiguration.jmaUserSetting1)]...")
+                let _ = xcgLogMsg("\(ClassInfo.sClsDisp):body(some View) - 'JmXcodeBuildSettings' is [\(JmXcodeBuildSettings.toString())]...")
+
+                Text("Variable: Info.plist KEY of 'JMA_USER_SETTING_1' is [\(JmXcodeBuildSettings.jmAppJmaUserSetting1)]...")
                 .padding()
 
                 Spacer()
@@ -117,7 +119,10 @@ struct ContentView: View
                     VStack(alignment:.center)
                     {
 
-                        Text("\(getAppVersionAndBuildNumber())")    // <=== Version...
+                        Text("Method: \(JmXcodeBuildSettings.getAppVersionAndBuildNumber())")    // <=== Version...
+                            .controlSize(.regular)
+
+                        Text("Variable: \(JmXcodeBuildSettings.jmAppVersionAndBuildNumber)")     // <=== Version...
                             .controlSize(.regular)
 
                     }
@@ -136,7 +141,11 @@ struct ContentView: View
                     VStack(alignment:.center)
                     {
 
-                        Text("\(getAppCopyright())")
+                        Text("Method: \(JmXcodeBuildSettings.getAppCopyright())")
+                            .italic()
+                            .controlSize(.mini)
+
+                        Text("Variable: \(JmXcodeBuildSettings.jmAppCopyright)")
                             .italic()
                             .controlSize(.mini)
 
@@ -154,8 +163,11 @@ struct ContentView: View
         }
         .navigationTitle("\(AppGlobalInfo.sGlobalInfoAppId)")
     //  .navigationBarTitleDisplayMode(.inline)
+
+    #if os(iOS) // -or- os(macOS) <and maybe #elseif to double the check>
+
         // ------------------------------------------------------------------------------------------------------
-        // >>> This does work (the .toolbar() MUST be under a NavigationStack:
+        // >>> This does work (the .toolbar() MUST be under a NavigationStack (but NOT on Mac):
         // ------------------------------------------------------------------------------------------------------
         .toolbar
         {
@@ -174,7 +186,11 @@ struct ContentView: View
         
         }
 
+    #endif
+
     }
+
+#if os(iOS) // -or- os(macOS) <and maybe #elseif to double the check>
 
     func presentSettingsSingleView() -> some View
     {
@@ -194,44 +210,8 @@ struct ContentView: View
     //  return SettingsSingleView()
 
     }   // End of func presentSettingsSingleView().
-    
-    func getAppVersionAndBuildNumber() -> String 
-    {
 
-        let sCurrMethod:String = #function
-        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
-        
-        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
-
-        let sAppVersionNumber:String         = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-N/A-"
-        let sAppBuildNumber:String           = (Bundle.main.infoDictionary?["CFBundleVersion"]            as? String) ?? "-N/A-"
-        let sAppVersionAndBuildNumber:String = "Version v\(sAppVersionNumber) (\(sAppBuildNumber))"
-
-        // Exit:
-
-        self.xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppVersionAndBuildNumber' is [\(sAppVersionAndBuildNumber)]...")
-
-        return sAppVersionAndBuildNumber
-
-    }   // End of func getAppVersionAndBuildNumber().
-
-    func getAppCopyright() -> String 
-    {
-
-        let sCurrMethod:String = #function
-        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
-        
-        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
-
-        let sAppCopyRight:String = (Bundle.main.infoDictionary?["NSHumanReadableCopyright"] as? String) ?? "-N/A-"
-
-        // Exit:
-
-        self.xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppCopyRight' is [\(sAppCopyRight)]...")
-
-        return sAppCopyRight
-
-    }   // End of func getAppCopyright().
+#endif
 
     func xcgLogMsg(_ sMessage:String)
     {

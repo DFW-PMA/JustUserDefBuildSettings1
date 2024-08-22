@@ -12,6 +12,9 @@
 		F00F96122C7683AA0035D745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00F96112C7683AA0035D745 /* Assets.xcassets */; };
 		F00F96152C7683AA0035D745 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00F96142C7683AA0035D745 /* Preview Assets.xcassets */; };
 		F00F961E2C76942D0035D745 /* JustUserDefBuildSettings1AppGlobalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F961D2C76942D0035D745 /* JustUserDefBuildSettings1AppGlobalInfo.swift */; };
+		F0601D8E2C77B26700443D72 /* JmStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601D8C2C77B26700443D72 /* JmStringExtensions.swift */; };
+		F0601D8F2C77B26700443D72 /* JmXcodeBuildSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601D8D2C77B26700443D72 /* JmXcodeBuildSettings.swift */; };
+		F0601D912C77B2AD00443D72 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0601D902C77B2AD00443D72 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		F00F96162C7683AA0035D745 /* JustUserDefBuildSettings1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustUserDefBuildSettings1.entitlements; sourceTree = "<group>"; };
 		F00F961C2C7687AE0035D745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F00F961D2C76942D0035D745 /* JustUserDefBuildSettings1AppGlobalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustUserDefBuildSettings1AppGlobalInfo.swift; sourceTree = "<group>"; };
+		F0601D8C2C77B26700443D72 /* JmStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JmStringExtensions.swift; sourceTree = "<group>"; };
+		F0601D8D2C77B26700443D72 /* JmXcodeBuildSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JmXcodeBuildSettings.swift; sourceTree = "<group>"; };
+		F0601D902C77B2AD00443D72 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +61,14 @@
 		F00F960C2C7683A80035D745 /* JustUserDefBuildSettings1 */ = {
 			isa = PBXGroup;
 			children = (
-				F00F96112C7683AA0035D745 /* Assets.xcassets */,
-				F00F960F2C7683A80035D745 /* ContentView.swift */,
-				F00F961C2C7687AE0035D745 /* Info.plist */,
-				F00F96162C7683AA0035D745 /* JustUserDefBuildSettings1.entitlements */,
 				F00F960D2C7683A80035D745 /* JustUserDefBuildSettings1App.swift */,
 				F00F961D2C76942D0035D745 /* JustUserDefBuildSettings1AppGlobalInfo.swift */,
+				F0601D8B2C77B20A00443D72 /* JmUtils */,
+				F0601D8A2C77B1FD00443D72 /* Views */,
+				F0601D902C77B2AD00443D72 /* README.md */,
+				F00F961C2C7687AE0035D745 /* Info.plist */,
+				F00F96162C7683AA0035D745 /* JustUserDefBuildSettings1.entitlements */,
+				F00F96112C7683AA0035D745 /* Assets.xcassets */,
 				F00F96132C7683AA0035D745 /* Preview Content */,
 			);
 			path = JustUserDefBuildSettings1;
@@ -72,6 +80,23 @@
 				F00F96142C7683AA0035D745 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0601D8A2C77B1FD00443D72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F00F960F2C7683A80035D745 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0601D8B2C77B20A00443D72 /* JmUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F0601D8C2C77B26700443D72 /* JmStringExtensions.swift */,
+				F0601D8D2C77B26700443D72 /* JmXcodeBuildSettings.swift */,
+			);
+			path = JmUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0601D912C77B2AD00443D72 /* README.md in Resources */,
 				F00F96152C7683AA0035D745 /* Preview Assets.xcassets in Resources */,
 				F00F96122C7683AA0035D745 /* Assets.xcassets in Resources */,
 			);
@@ -145,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F00F96102C7683A80035D745 /* ContentView.swift in Sources */,
+				F0601D8E2C77B26700443D72 /* JmStringExtensions.swift in Sources */,
 				F00F961E2C76942D0035D745 /* JustUserDefBuildSettings1AppGlobalInfo.swift in Sources */,
 				F00F960E2C7683A80035D745 /* JustUserDefBuildSettings1App.swift in Sources */,
+				F0601D8F2C77B26700443D72 /* JmXcodeBuildSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +307,7 @@
 				CODE_SIGN_ENTITLEMENTS = JustUserDefBuildSettings1/JustUserDefBuildSettings1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 02.01.24C235;
+				CURRENT_PROJECT_VERSION = 02.04.24C235;
 				DEVELOPMENT_ASSET_PATHS = "\"JustUserDefBuildSettings1/Preview Content\"";
 				DEVELOPMENT_TEAM = J434W9VGHF;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -311,7 +339,7 @@
 				CODE_SIGN_ENTITLEMENTS = JustUserDefBuildSettings1/JustUserDefBuildSettings1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 02.01.24C235;
+				CURRENT_PROJECT_VERSION = 02.04.24C235;
 				DEVELOPMENT_ASSET_PATHS = "\"JustUserDefBuildSettings1/Preview Content\"";
 				DEVELOPMENT_TEAM = J434W9VGHF;
 				ENABLE_HARDENED_RUNTIME = YES;

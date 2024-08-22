@@ -19,26 +19,26 @@ struct AppGlobalInfo
     
 }
 
-enum AppGlobalConfiguration 
-{
-
-    // MARK: - Public Variable(s)...
-
-    static var jmaUserSetting1:String
-    {
-
-        infoPlistString(for: "JMA_USER_SETTING_1")
-
-    }
-
-    // MARK: - Internal Method(s)...
-
-    static private func infoPlistString(for key:String) -> String 
-    {
-
-        return Bundle.main.infoDictionary?[key] as! String
-
-    }   // End of static private func infoPlistString(for key:).
-
-}   // End of enum AppGlobalConfiguration.
+//  enum AppGlobalConfiguration 
+//  {
+//
+//      // MARK: - Public Variable(s)...
+//
+//      static var jmaUserSetting1:String
+//      {
+//
+//          infoPlistString(for: "JMA_USER_SETTING_1")
+//
+//      }
+//
+//      // MARK: - Internal Method(s)...
+//
+//      static private func infoPlistString(for key:String) -> String 
+//      {
+//
+//          return Bundle.main.infoDictionary?[key] as! String
+//
+//      }   // End of static private func infoPlistString(for key:).
+//
+//  }   // End of enum AppGlobalConfiguration.
 

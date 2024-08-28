@@ -17,7 +17,7 @@ public class JmXcodeBuildSettings
     {
 
         static let sClsId        = "JmXcodeBuildSettings"
-        static let sClsVers      = "v1.0106"
+        static let sClsVers      = "v1.0201"
         static let sClsDisp      = sClsId+".("+sClsVers+"): "
         static let sClsCopyRight = "Copyright (C) JustMacApps 2023-2024. All Rights Reserved."
         static let bClsTrace     = false
@@ -27,13 +27,33 @@ public class JmXcodeBuildSettings
 
     // App Data field(s):
 
+    static var jmAppCategory:String
+    {
+
+        return getAppInfoPlistString(for: "LSApplicationCategoryType")
+
+    }
+
+    static var jmAppDisplayName:String
+    {
+
+        return getAppInfoPlistString(for: "CFBundleDisplayName")
+
+    }
+
+    static var jmAppBundleIdentifier:String
+    {
+
+        return getAppInfoPlistString(for: "CFBundleIdentifier")
+
+    }
+
     static var jmAppVersionAndBuildNumber:String
     {
 
-    //  getAppVersionAndBuildNumber()
-
-    //  'CFBundleShortVersionString' is the Version # and
-    //  'CFBundleVersion'            is the Build   #:
+    //  getAppVersionAndBuildNumber():
+    //      'CFBundleShortVersionString' is the Version # and
+    //      'CFBundleVersion'            is the Build   #:
 
         return "Version v\(getAppInfoPlistString(for: "CFBundleShortVersionString")) (\(getAppInfoPlistString(for: "CFBundleVersion")))"
 
@@ -76,6 +96,9 @@ public class JmXcodeBuildSettings
         asToString.append("'bClsFileLog': [\(ClassInfo.bClsFileLog)]")
         asToString.append("],")
         asToString.append("[")
+        asToString.append("'jmAppCategory': [\(self.jmAppCategory)],")
+        asToString.append("'jmAppDisplayName': [\(self.jmAppDisplayName)],")
+        asToString.append("'jmAppBundleIdentifier': [\(self.jmAppBundleIdentifier)],")
         asToString.append("'jmAppVersionAndBuildNumber': [\(self.jmAppVersionAndBuildNumber)],")
         asToString.append("'jmAppCopyright': [\(self.jmAppCopyright)],")
         asToString.append("'jmAppJmaUserSetting1': [\(self.jmAppJmaUserSetting1)],")
@@ -89,6 +112,60 @@ public class JmXcodeBuildSettings
 
     }   // End of class public func toString().
 
+    class public func getAppCategory() -> String 
+    {
+
+        let sCurrMethod:String = #function
+        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
+        
+        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
+
+        let sAppCategory:String = getAppInfoPlistString(for: "LSApplicationCategoryType")
+
+        // Exit:
+
+        xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppCategory' is [\(sAppCategory)]...")
+
+        return sAppCategory
+
+    }   // End of class public func getAppCategory().
+
+    class public func getAppDisplayName() -> String 
+    {
+
+        let sCurrMethod:String = #function
+        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
+        
+        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
+
+        let sAppDiaplayName:String = getAppInfoPlistString(for: "CFBundleDisplayName")
+
+        // Exit:
+
+        xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppDiaplayName' is [\(sAppDiaplayName)]...")
+
+        return sAppDiaplayName
+
+    }   // End of class public func getAppDisplayName().
+
+    class public func getAppBundleIdentifier() -> String 
+    {
+
+        let sCurrMethod:String = #function
+        let sCurrMethodDisp    = "\(ClassInfo.sClsDisp)'"+sCurrMethod+"':"
+        
+        self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
+
+        let sAppBundleIdentifier:String = getAppInfoPlistString(for: "CFBundleIdentifier")
+
+        // Exit:
+
+        xcgLogMsg("\(sCurrMethodDisp) Exiting - 'sAppBundleIdentifier' is [\(sAppBundleIdentifier)]...")
+
+        return sAppBundleIdentifier
+
+    }   // End of class public func getAppBundleIdentifier().
+
     class public func getAppVersionAndBuildNumber() -> String 
     {
 
@@ -97,8 +174,6 @@ public class JmXcodeBuildSettings
         
         xcgLogMsg("\(sCurrMethodDisp) Invoked...")
 
-    //  let sAppVersionNumber:String         = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-N/A-"
-    //  let sAppBuildNumber:String           = (Bundle.main.infoDictionary?["CFBundleVersion"]            as? String) ?? "-N/A-"
         let sAppVersionNumber:String         = getAppInfoPlistString(for: "CFBundleShortVersionString")
         let sAppBuildNumber:String           = getAppInfoPlistString(for: "CFBundleVersion")
         let sAppVersionAndBuildNumber:String = "Version v\(sAppVersionNumber) (\(sAppBuildNumber))"
@@ -119,7 +194,6 @@ public class JmXcodeBuildSettings
         
         self.xcgLogMsg("\(sCurrMethodDisp) Invoked...")
 
-    //  let sAppCopyRight:String = (Bundle.main.infoDictionary?["NSHumanReadableCopyright"] as? String) ?? "-N/A-"
         let sAppCopyRight:String = getAppInfoPlistString(for: "NSHumanReadableCopyright")
 
         // Exit:
